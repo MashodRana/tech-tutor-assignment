@@ -5,17 +5,19 @@ import './Home.css'
 
 
 import bannerImg from '../Images/bannerImg.svg'
+import { useHistory } from "react-router";
+import useCourses from "../../hooks/useCourses";
 
 
 const Home = () => {
-    const [courses, setCourses] = useState([]);
+    const courses = useCourses();
+    let  history = useHistory();
 
-    useEffect(() => {
-        const url = "./fake_data.json";
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setCourses(data));
-    }, [])
+    
+
+    const handleButtonClick = (id) => {
+        history.push(`course/${id}`);
+    }
 
     return (
         <>
@@ -50,10 +52,12 @@ const Home = () => {
                     <h1>Our Popular Courses</h1>
                     <div>
                         <Row xs={1} md={2} lg={3} className="g-2">
+                        {console.log('=============',courses.length)}
                             {
                                 courses.slice(0, 6).map(course => <CustomCard
                                     key={course.id}
                                     course={course}
+                                    handleButtonClick={handleButtonClick}
                                 >
 
                                 </CustomCard>

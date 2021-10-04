@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
+import { useHistory } from "react-router";
+import useCourses from "../../hooks/useCourses";
 import CustomCard from "../Card/Card";
 
 
 const Courses = () => {
-    const [courses, setCourses] = useState([]);
+    const courses = useCourses();
+    let  history = useHistory();
 
-    useEffect(() => {
-        const url = "./fake_data.json";
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setCourses(data));
-    }, [])
+    const handleButtonClick = (id)=>{
+        history.push(`course/${id}`);
+    }
 
     return (
         <>
@@ -24,6 +24,7 @@ const Courses = () => {
                             courses.map(course => <CustomCard
                                 key={course.id}
                                 course={course}
+                                handleButtonClick = {handleButtonClick}
                             >
 
                             </CustomCard>
