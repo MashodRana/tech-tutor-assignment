@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import ArticleCard from "../Card/ArticleCard";
-
+import './Articles.css'
 
 const Articles = () => {
     const [articles, setArticles] = useState([]);
 
     useEffect(()=>{
-        const url = "./fake_articles.json";
+        const url = "https://mashodrana.github.io/json-data/fake_articles_data.json"
         fetch(url)
         .then(res=>res.json())
         .then(data=>setArticles(data))

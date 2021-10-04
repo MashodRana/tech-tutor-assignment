@@ -9,16 +9,22 @@ const CourseDetail = ()=>{
 
     return (
         <>
-        <Container>
-            {console.log('=============',courses.length)}
-            {console.log('*****************',courseId)}
-            {/* <div>
+        <section>
+        <Container className="my-5 p-5">
+            <div>
                 <img src={courses[courseId].image} alt="" />
             </div>
             <div>
                 <h1>Title: {courses[courseId].title} </h1>
-            </div> */}
+                <p>Author: {courses[courseId].author}</p>
+                <p>Rating: {courses[courseId].rating} </p>
+                <p>Price: {courses[courseId].price}</p>
+                <p>Description: <br />
+                {courses[courseId].text}
+                </p>
+            </div>
         </Container>
+        </section>
         </>
     );
 };
