@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 import './Header.css';
@@ -9,14 +9,14 @@ const Header = () => {
 
     const navlinkStyles = {
         textDecoration: 'none',
-        color: 'white',
-        backgroundColor: 'gray'
+        color: 'orange',
+        backgroundColor: '#efebe7'
     }
     return (
         <div>
-            <Navbar className="header" bg="light" expand="lg">
+            <Navbar className="custom-header" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home">Tech Tutor</Navbar.Brand>
+                    <Navbar.Brand href="#home"> <span className="brand">Tech Tutor</span></Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">

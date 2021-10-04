@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
+import ArticleCard from "../Card/ArticleCard";
 
 
-const Articles = ()=>{
+const Articles = () => {
+    const [articles, setArticles] = useState([]);
+
+    useEffect(()=>{
+        const url = "./fake_articles.json";
+        fetch(url)
+        .then(res=>res.json())
+        .then(data=>setArticles(data))
+    },[])
+
     return (
-        <div>
-            <h1>This is article page.</h1>
-        </div>
+        <>
+            <section>
+                <Container className="my-5">
+                    <h1>Articles</h1>
+                    <p>Read articles about what you like.</p>
+                    {
+                        articles.map(article=> <ArticleCard
+                        key = {article.id}
+                        article = {article}
+                        ></ArticleCard> )
+                    }
+                </Container>
+            </section>
+        </>
     );
 };
 

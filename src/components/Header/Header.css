@@ -1,10 +1,20 @@
-.header a{
+.custom-header{
+    background-color: #6c3b70;
+    
+}
+
+.brand{
+    color: orange;
+    font-weight: 700;
+}
+.custom-header a{
     text-decoration: none;
     padding: 15px;
     margin-left: 5px;
+    color: white;
 }
 
-.header a:hover{
-    background-color: gray;
-    color: white;
+.custom-header a:hover{
+    background-color: #efebe7;
+    color: orange;
 }

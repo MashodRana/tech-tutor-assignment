@@ -1,11 +1,19 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 
 
-const About = ()=>{
+const About = () => {
     return (
-        <div>
-            <h1>This is About page.</h1>
-        </div>
+        <>
+            <section>
+                <Container className='text-center my-5'>
+                    <h1>About Tech Tutor</h1>
+                    <p>
+                        Our main goal is to help peolple to gain knowledge in various technology. We are trying to make easy the to getting the latest technological resources in a academical way. You can learn and rich your skill in various technology which will help you to make your future bright we hope.
+                    </p>
+                </Container>
+            </section>
+        </>
     );
 };
 

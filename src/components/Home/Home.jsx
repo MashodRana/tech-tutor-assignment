@@ -1,12 +1,24 @@
-import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import CustomCard from "../Card/Card";
+
+
 
 import bannerImg from '../Images/bannerImg.svg'
 
 
 const Home = () => {
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        const url = "./fake_data.json";
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setCourses(data));
+    }, [])
+
     return (
-        <div>
+        <>
             <section>
                 <Row>
                     <Col md={5}>
@@ -32,27 +44,24 @@ const Home = () => {
             </section>
 
             <section>
-                <h1>Our Popular Courses</h1>
-                <div>
-                    <Row xs={1} md={2} className="g-4">
+                <Container className="my-5">
+                    <h1>Our Popular Courses</h1>
+                    <div>
+                        <Row xs={1} md={2} lg={3} className="g-2">
+                            {
+                                courses.slice(0, 6).map(course => <CustomCard
+                                    key={course.id}
+                                    course={course}
+                                >
 
-                        <Col>
-                            <Card>
-                                <Card.Img variant="top" src="holder.js/100px160" />
-                                <Card.Body>
-                                    <Card.Title>Card title</Card.Title>
-                                    <Card.Text>
-                                        This is a longer card with supporting text below as a natural
-                                        lead-in to additional content. This content is a little bit longer.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-
-                    </Row>
-                </div>
+                                </CustomCard>
+                                )
+                            }
+                        </Row>
+                    </div>
+                </Container>
             </section>
-        </div>
+        </>
     );
 };
 
