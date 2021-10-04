@@ -1,0 +1,15 @@
+.custom-card{
+    border: 1px solid orchid;
+}
+
+button {
+    border: none;
+    background-color: goldenrod;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #703c6f;
+    color: orange;
+}

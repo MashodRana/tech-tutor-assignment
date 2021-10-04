@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import CustomCard from "../Card/Card";
-
+import './Home.css'
 
 
 import bannerImg from '../Images/bannerImg.svg'
@@ -19,31 +19,33 @@ const Home = () => {
 
     return (
         <>
-            <section>
-                <Row>
-                    <Col md={5}>
-                        <div>
-                            <img src={bannerImg} alt="" />
-                        </div>
-                    </Col>
-                    <Col md={7}>
-                        <div className="p-5">
-                            <h1 >
-                                <span className="fs-1 text-danger">Tech Tutor</span>
-                                <br />
-                                <small>your friendly online tutor</small>
-                            </h1>
+            <section className="intro-section py-5">
+                <Container>
+                    <Row>
+                        <Col md={5}>
+                            <div style={{ width: '75%' }}>
+                                <img src={bannerImg} alt="" />
+                            </div>
+                        </Col>
+                        <Col md={7}>
+                            <div className="p-5">
+                                <h1 >
+                                    <span className="fs-1 brand">Tech Tutor</span>
+                                    <br />
+                                    <small>your friendly online tutor</small>
+                                </h1>
 
-                            <p>
-                                You can learn from here and make a bright future.
-                            </p>
-                        </div>
-                    </Col>
+                                <p>
+                                    You can learn from here and make a bright future.
+                                </p>
+                            </div>
+                        </Col>
 
-                </Row>
+                    </Row>
+                </Container>
             </section>
 
-            <section>
+            <section className="popular-courses">
                 <Container className="my-5">
                     <h1>Our Popular Courses</h1>
                     <div>

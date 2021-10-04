@@ -21,16 +21,16 @@ function App() {
           <Route exact path='/'>
             <Home></Home>
           </Route>
-          <Route path='/home'>
+          <Route exact path='/home'>
             <Home></Home>
           </Route>
-          <Route path='/courses'>
+          <Route exact path='/courses'>
             <Courses></Courses>
           </Route>
-          <Route path='/articles'>
+          <Route exact path='/articles'>
             <Articles></Articles>
           </Route>
-          <Route path='/about'>
+          <Route exact path='/about'>
             <About></About>
           </Route>
           <Route path='*'>
